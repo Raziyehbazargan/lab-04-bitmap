@@ -16,15 +16,13 @@ exports.fileInfo = (buff) => {
   console.log('colorArrayEnd: ' ,this.colorArrayEnd);
   this.colorArray = [];
   console.log('colorArray: ' ,this.colorArray);
-
 };
 
 
-exports.colorsArray = ((buff)=> {
+exports.colorsArray = ((buff) => {
+  console.log('colorsarray buff ', buff);
   for(var i = 54; i < this.colorArrayEnd; i++ ) {
-    console.log(buff.readUInt8[4]);
-    //this.colorArray.push(buff.readUInt8[i]);
-
-   // console.log('colorArray :', this.colorArray);
+    console.log(buff.readUInt8[i]);
+    this.colorArray.push(buff.readUInt8[i]);
   }
 });
