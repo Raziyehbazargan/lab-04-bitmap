@@ -1,24 +1,30 @@
 'use strict';
 
-//const buffer = require('./bitmap-file-read.js');
+//define a object for Image File Info
+module.exports = exports = {};
 
-//define a constructor for Image File Info
-function FileInfo(buff) {
-  this.stringData = buff.toString('hex',0,2);
+exports.fileInfo = (buff) => {
+  this.stringData =  buff.toString('hex',0,2);
+  console.log('stringData ', this.stringData);
   this.size = buff.readUInt32LE(2);
+  console.log('size: ' ,this.size);
   this.startOffset = buff.readUInt32LE(10);
+  console.log('startOffset: ' ,this.startOffset);
   this.colorArrayStart = 54;
+  console.log('colorArrayStart: ' ,this.colorArrayStart);
   this.colorArrayEnd = this.startOffset  - 54;
+  console.log('colorArrayEnd: ' ,this.colorArrayEnd);
   this.colorArray = [];
-}
-module.exports = FileInfo;
+  console.log('colorArray: ' ,this.colorArray);
 
-//var fileInfo = new FileInfo(buffer);
+};
 
 
-// exports.colorsArray = function() {
-//   for(var i = 54; i< fileInfo.colorArrayEnd; i++ ) {
-//     fileInfo.colorArray.push(buff[i]);
-//     console.log(fileInfo.colorArray);
-//   }
-// };
+exports.colorsArray = ((buff)=> {
+  for(var i = 54; i < this.colorArrayEnd; i++ ) {
+    console.log(buff.readUInt8[4]);
+    //this.colorArray.push(buff.readUInt8[i]);
+
+   // console.log('colorArray :', this.colorArray);
+  }
+});
