@@ -13,11 +13,16 @@ exports.colorArrayChange = function(headerData){
 
 
 exports.dataArrayMap = function(colorArray, colorDataArray){
-  this.chunkArray = [];
-  for(var x = 0; x < colorArray.colorArray.length; x += 4) {
-    this.chunkArray.push(colorDataArray.colorDataArray.slice(x, x+4));
-    // this.chunkArray[0] = 99;
+    // this.chunkArray;
+ var currentColor;
+  for(var x = 0; x < colorArray.length; x += 4) {
+    currentColor = colorArray.slice(x, x+4);
+    currentColor[0] = 99;
+    currentColor[1] = 99;
+    currentColor[2] = 99;
+    currentColor[3] = 99;
+    console.log(currentColor);
   }
-  console.log('array chunk', this.chunkArray);
+//   console.log('array chunk', this.chunkArray);
 };
 

@@ -1,19 +1,19 @@
 'use strict';
 
 const readFile = require('./lib/bitmap-file-read.js');
-const fileHeader = require('./lib/bitmap-file-info.js');
+const Bitmap = require('./model/bitmap.js');
 const fileTransform = require('./lib/bitmap-file-transform.js');
-
-
 
 var fileHeaderData, colorDataArray;
 
-function main(readFile, fileHeader){
+function main(){
   readFile((data) => {
-    fileHeaderData = fileHeader.fileInfo(data);
-    colorDataArray = fileTransform.colorArrayChange(fileHeaderData);
-    fileTransform.dataArrayMap(fileHeaderData,colorDataArray);
+    var bitmap = Bitmap(data);
+    console.log('bitmap', bitmap)
+    fileTransform.dataArrayMap(bitmap.colorArray);
+    // fileTransform.dataArrayMap(fileHeaderData,colorDataArray)
+    // save the file after the change
   });
 }
 
-main(readFile, fileHeader, fileTransform);
+main();

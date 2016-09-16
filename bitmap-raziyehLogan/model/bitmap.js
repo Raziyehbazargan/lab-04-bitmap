@@ -1,8 +1,6 @@
 'use strict';
 
-module.exports = exports = {};
-
-exports.fileInfo = (buff) => {
+module.exports = (buff) => {
   this.stringData =  buff.toString('hex',0,2);
   this.size = buff.readUInt32LE(2);
   this.startOffset = buff.readUInt32LE(10);
