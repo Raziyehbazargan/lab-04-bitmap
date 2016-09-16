@@ -1,14 +1,19 @@
 'use strict';
 
-const main = require('./lib/bitmap-file-read.js');
-const transform = require('./lib/bitmap-transform.js');
+const readFile = require('./lib/bitmap-file-read.js');
+const fileHeader = require('./lib/bitmap-file-info.js');
+const fileTransform = require('./lib/bitmap-file-transform.js');
 
-var buffer;
-module.exports = buffer;
-main((data) =>{
-  buffer = data;
-  console.log('index data console',buffer);
-  transform.fileInfo(buffer);
-  transform.colorsArray(buffer); //we need to change buffer with toString***
-});
 
+
+var fileHeaderData, colorDataArray;
+
+function main(readFile, fileHeader){
+  readFile((data) => {
+    fileHeaderData = fileHeader.fileInfo(data);
+    colorDataArray = fileTransform.colorArrayChange(fileHeaderData);
+    fileTransform.dataArrayMap(fileHeaderData,colorDataArray);
+  });
+}
+
+main(readFile, fileHeader, fileTransform);
