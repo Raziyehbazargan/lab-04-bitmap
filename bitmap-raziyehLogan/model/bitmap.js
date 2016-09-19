@@ -7,6 +7,6 @@ module.exports = (buff) => {
   this.colorArrayStart = 54;
   this.colorArrayLength = this.startOffset  - 54;
   this.colorArray = buff.slice(54,this.startOffset);
- //this.colorDataArray = [];
+  this.buffer = buff;
   return this;
 };

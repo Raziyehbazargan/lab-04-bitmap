@@ -12,17 +12,18 @@ exports.colorArrayChange = function(headerData){
 };
 
 
-exports.dataArrayMap = function(colorArray, colorDataArray){
-    // this.chunkArray;
- var currentColor;
+exports.dataArrayMap = function(colorArray){
+  var currentColor, currentColorArray= [];
   for(var x = 0; x < colorArray.length; x += 4) {
-    currentColor = colorArray.slice(x, x+4);
-    currentColor[0] = 99;
-    currentColor[1] = 99;
-    currentColor[2] = 99;
-    currentColor[3] = 99;
-    console.log(currentColor);
+    currentColor = colorArray.slice(x, x + 4);
+    currentColorArray.push(currentColor);
   }
-//   console.log('array chunk', this.chunkArray);
+  return currentColorArray;
 };
 
+exports.changeImageColor = function(currentColorArray){
+  for (var i = 0; i < currentColorArray.length; i++){
+    currentColorArray[i] = currentColorArray[i] + 6;
+  }
+  return currentColorArray;
+};
