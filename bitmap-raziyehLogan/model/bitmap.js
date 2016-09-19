@@ -10,3 +10,5 @@ module.exports = (buff) => {
   this.buffer = buff;
   return this;
 };
+
+
