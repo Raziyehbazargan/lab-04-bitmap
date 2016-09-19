@@ -11,6 +11,7 @@ exports.dataArrayMap = function(colorArray){
     newColor = new Color(currentColor);
     newColor.grayScale();
     currentColorArray.push(newColor);
+    console.log(currentColorArray);
   }
   return currentColorArray;
 };

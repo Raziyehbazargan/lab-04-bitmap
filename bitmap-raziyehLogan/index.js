@@ -9,7 +9,7 @@ function main(){
   readFile((data) => {
     var bitmap = Bitmap(data);
     fileTransform.dataArrayMap(bitmap.colorArray);
-    writeFile('changedImage',bitmap.buffer, (data)=>{console.log('Done',data);});
+    writeFile('changedImage',bitmap.buffer, (data)=> {console.log('Done',data);});
   });
 }
 
