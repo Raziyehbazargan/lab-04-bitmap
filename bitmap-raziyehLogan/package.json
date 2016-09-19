@@ -1,7 +1,7 @@
 {
   "name": "bitmap-raziyeh-logan",
   "version": "1.0.0",
-  "description": "",
+  "description": "Raziyeh Bazargan - Logan Rogers",
   "main": "index.js",
   "directories": {
     "test": "test"
@@ -9,7 +9,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "Raziyeh - Logan",
   "license": "ISC",
   "devDependencies": {
     "chai": "^3.5.0",
@@ -18,5 +18,13 @@
     "gulp-eslint": "^3.0.1",
     "gulp-mocha": "^3.0.1",
     "mocha": "^3.0.2"
+  },
+  "dependencies": {
+    "lodash": "^4.15.0",
+    "minimatch": "^3.0.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Raziyehbazargan/lab-04-bitmap/tree/master/bitmap-raziyehLogan"
   }
 }
