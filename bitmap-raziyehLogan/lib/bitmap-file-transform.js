@@ -2,28 +2,17 @@
 
 module.exports = exports = {};
 
-exports.colorArrayChange = function(headerData){
-  this.colorDataArray = [];
-  for(var i = 0; i < headerData.colorArrayLength; i++ ) {
-    this.colorDataArray.push(headerData.colorArray.readUInt8(i));
-  }
-  console.log('colorArrayChange',  this.colorDataArray);
-  return this;
-};
-
 
 exports.dataArrayMap = function(colorArray){
-  var currentColor, currentColorArray= [];
+  var currentColor, currentColorArray = [];
   for(var x = 0; x < colorArray.length; x += 4) {
     currentColor = colorArray.slice(x, x + 4);
+    currentColor[0] = 255;
+    currentColor[1] = 255;
+    currentColor[2] = 0;
+    currentColor[3] = 120;
     currentColorArray.push(currentColor);
   }
   return currentColorArray;
 };
 
-exports.changeImageColor = function(currentColorArray){
-  for (var i = 0; i < currentColorArray.length; i++){
-    currentColorArray[i] = currentColorArray[i] + 6;
-  }
-  return currentColorArray;
-};

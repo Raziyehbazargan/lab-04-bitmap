@@ -1,9 +1,7 @@
-// 'use strict';
+'use strict';
 
-// var bitmapBuffer = require('../model/bitmap.js');
-// var fs = require('fs');
+var fs = require('fs');
 
-// module.exports = function(bufferChanged){
-
-
-// };
+module.exports = function(buffer){
+  fs.writeFile(`${__dirname}/../data/bitmap.bmp`,buffer);
+};
