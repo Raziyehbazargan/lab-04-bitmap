@@ -1,6 +1,5 @@
 'use strict';
 
-
 var Color = module.exports = function(buffer) {
   this.colorBuf = buffer;
   this.red = buffer.readUInt8(2);

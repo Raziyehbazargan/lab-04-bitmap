@@ -5,7 +5,10 @@ module.exports = exports = {};
 
 
 exports.dataArrayMap = function(colorArray){
-  var currentColor, currentColorArray = [], newColor;
+  var currentColor,
+    currentColorArray = [],
+    newColor;
+    
   for(var x = 0; x < colorArray.length; x += 4) {
     currentColor = colorArray.slice(x, x + 4);
     newColor = new Color(currentColor);
