@@ -1,9 +1,9 @@
 'use strict';
 
-const expect = require('chai').expect;
+const assert = require('assert');
 
 describe('Bitmap tests', function(){
   it('test1', function(){
-    expect(true).to.be.true;
+    assert.isNotOk(false,'false');
   });
 });
